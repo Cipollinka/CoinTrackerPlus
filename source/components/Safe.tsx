@@ -1,16 +1,15 @@
-import {SafeAreaView, StyleSheet, View} from 'react-native';
+import {Image, SafeAreaView, StyleSheet, View} from 'react-native';
 import React from 'react';
-import LinearGradient from 'react-native-linear-gradient';
 
 export default function Safe({children}: any) {
   return (
-    <LinearGradient
-      colors={['#6ACFFF', '#6ACFFF', '#2EB0EE']}
-      style={styles.area}>
+    <View style={{flex:1}}>
+      <Image source={require('../media/image/bg.png')} style={{position:'absolute', width:'100%', height: '100%', flex: 1}}/>
+        <View style={{flex:1, backgroundColor: 'black', opacity: 0.2, position:'absolute', width:'100%', height: '100%'}}/>
       <SafeAreaView style={styles.area}>
         <View style={styles.subContainer}>{children}</View>
       </SafeAreaView>
-    </LinearGradient>
+    </View>
   );
 }
 const styles = StyleSheet.create({
